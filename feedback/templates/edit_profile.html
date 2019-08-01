@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+<title>Log in</title>
+
+{% endblock %}
+
+
+{% block body %}
+<div style="text-align: center;">
+<h1>Edit your account</h1>
+<p>You can edit your account using the following form:</p>
+</div>
+<form action="." method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<table border="0" align="center" style="width: 60%;">
+{% for field in user_form.visible_fields %}
+	<tr>{{ field.errors }}</tr>
+	<tr>
+        <!-- <th style="width: 26%; text-align: right;">{{ field.label_tag }}</th> -->
+        <td style="width: 74%;">
+        <b class="legend">{{ field.label_tag }}</b><br>
+          
+          {{ field }}<br><br>
+          <!-- {{ field.help_text }} -->
+        </td>
+      </tr>
+    {% endfor %}
+
+    {% for field in profile_form.visible_fields %}
+	<tr>{{ field.errors }}</tr>
+	<tr>
+        <!-- <th style="width: 26%; text-align: right;">{{ field.label_tag }}</th> -->
+        <td style="width: 74%;">
+        <b class="legend">{{ field.label_tag }}</b><br>
+          
+          {{ field }}<br><br>
+          <!-- {{ field.help_text }} -->
+        </td>
+      </tr>
+    {% endfor %}		
+
+</table>
+<!-- <table border="0" align="center" style="width: 60%;">
+{{ user_form}}
+{{ profile_form }}
+</table> -->
+
+<p><input type="submit" value="Save changes"></p>
+</form>
+
+{% endblock %}

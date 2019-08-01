@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+<title>Feedback</title>
+
+{% endblock %}
+
+{% block body %}
+
+<span style="text-align: center;"><h2>FEEDBACK</h2>
+
+<p>Click on a subject to view feedback.</p></span>
+
+
+<div class="row">
+  <div class="columnleft" style="background-color:#ccc;">
+    <h2 style="text-align: center;">ENTREPRENUERSHIP</h2><hr>
+    {% for course in entreprenuership %}
+     <h2>  <i class="arrow_right"></i> 
+      <a href="{%url 'entreprenuership_feedback' course.id %}" style="color: black;">{{course.name}}</a>
+     </h2>
+    {% endfor %}
+  
+  </div> 
+
+<div class="columnright" style="background-color:#ccc;">
+  <h2 style="text-align: center;">ICT</h2><hr>
+    {% for course in ict %}
+    <h2>  <i class="arrow_right"></i> 
+      <a href="{%url 'ict_feedback' course.id %}" style="color: black;">{{course.name}}</a>
+    </h2>
+    {% endfor %}
+   
+  </div>
+</div> 
+
+
+{% endblock %}

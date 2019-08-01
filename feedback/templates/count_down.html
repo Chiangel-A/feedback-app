@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+<title>index</title>
+
+{% endblock %}
+
+{% block body %}
+<div>
+
+
+<h1>JavaScript Progress Bar</h1>
+
+<div id="myProgress">
+  <div id="myBar">10%</div>
+</div>
+
+<br>
+<button onclick="move()">Click Me</button>
+
+
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      // width++; 
+      width = width + 5;
+      elem.style.width = width * '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+</div>
+{% endblock %}

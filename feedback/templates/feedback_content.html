@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+<title>feedback</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div>
+{% for course in course %}
+<h2>{{course.name}}</h2>
+{%endfor%}
+
+
+<button class="accordion">Section 1</button>
+<div class="panel">
+  {% for response in response.all %}
+     <p>{{response.question_1}}</p>
+  {%endfor%}
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  {% for response in response.all %}
+     <p>{{response.question_2}}</p>
+  {%endfor%}
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  {% for response in response.all %}
+     <p>{{response.question_3}}</p>
+  {%endfor%}
+</div>
+
+<button class="accordion">Section 4</button>
+<div class="panel">
+  {% for response in response.all %}
+     <p>{{response.question_4}}</p>
+  {%endfor%}
+</div>
+
+<button class="accordion">Section 5</button>
+<div class="panel">
+  {% for response in response.all %}
+     <p>{{response.question_5}}</p>
+  {%endfor%}
+</div>
+
+<button class="accordion">Section 6</button>
+<div class="panel">
+  {% for response in response.all %}
+     <p>{{response.question_6}}</p>
+  {%endfor%}
+</div>
+
+<button class="accordion">Section 7</button>
+<div class="panel">
+  {% for response in response.all %}
+     <p>{{response.question_7}}</p>
+  {%endfor%}
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</div>
+
+{% endblock %}

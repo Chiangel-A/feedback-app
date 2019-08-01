@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+<title>Register</title>
+
+{% endblock %}
+
+
+{% block body %}
+<div style="text-align: center;">
+
+	<h1>Create an account</h1>
+	<p>Please, sign up using the following form:</p>
+</div>
+	<form action="." method="post" >
+	{% csrf_token %}
+	<table  border="0" align="center" style="width: 60%;">
+	{% for field in user_form.visible_fields %}
+	<tr style="color:'red'">{{ field.errors }}</tr>
+      <tr>
+        <!-- <th style="width: 26%; text-align: right;">{{ field.label_tag }}</th> -->
+        <td style="width: 74%;">
+        <b class="legend">{{ field.label_tag }}</b><br>
+          
+          {{ field }}<br><br>
+          <!-- {{ field.help_text }} -->
+        </td>
+      </tr>
+    {% endfor %}
+    <!-- <tr> <td colspan="2" style="text-align: center;">enter the same password as before for verification</td></tr> -->
+	</table>
+	<p><input type="submit" value="Create my account"></p>
+	</form>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+<title>Feedback - home page</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div style="background-color: #53c653; height: 100%; padding-top: 2px">
+<h1 style="text-align: center; color: white" id="text"></h1>
+
+<script src="{% static 'script/scripts.js' %}"></script>
+
+</div>
+{% endblock %}
+
+{% block index %}
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>DIGITAL INCLUSION</h2>
+      <h5></h5>
+      <div class="fakeimg" style="height: 725px"><img src="{% static 'images/picture.jpg' %}" style="width: 100%; height: 660px;"></div>
+      
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>ABOUT THE PROGRAM</h2>
+      <P>We work closely with underserved communities and youth (ages 12 – 28 years), providing the access to web-enabled technologies, digital literacy training, entrepreneurship and life-skills training, and supporting youth to pursue their entrepreneurial dreams</P>
+     <p>
+      The training Centre serves as a knowledge hub where youth from the community can be empowered for the world of work.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>2019B SESSION</h2>
+      <p>Start date <i class="arrow_right"></i> </p>
+      <p>End Date <i class="arrow_right"></i> </p>
+    </div>
+
+    <div class="card">
+      <h2>2019B ACTIVITIES</h2>
+      <div><p><b>Web development Presentation</b></p>
+      <p>date <i class="arrow_right"></i> </p>
+      </div>
+
+      <div><p><b>Business Plan Presentation</b></p>
+      <p>date <i class="arrow_right"></i> </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

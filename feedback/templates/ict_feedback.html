@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+<title>feedback</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div>
+<div style="text-align: center;" >
+{% for course in course %}
+<h2>{{course.name}}</h2>
+<h3>Facilitator: {{course.facilitator}}</h3>
+{%endfor%}
+</div>
+
+
+<button class="accordion"><strong>1.  The training met my expectations.</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_1}}</li><br>
+  {%endfor%}
+  </ol>
+</div>
+
+<button class="accordion"><strong>2.  I will be able to apply the knowledge learned.</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_2}}</li><br>
+  {%endfor%}
+  </ol>
+</div>
+
+<button class="accordion"><strong>3.  The training objectives for each topic were identified and followed.</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_3}}</li><br>
+  {%endfor%}
+  </ol>
+</div>
+
+<button class="accordion"><strong>4.  The content was organized and easy to follow.</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_4}}</li><br>
+  {%endfor%}
+</ol>
+</div>
+
+<button class="accordion"><strong>5.  The trainer was knowledgeable.</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_5}}</li><br>
+  {%endfor%}
+</ol>
+</div>
+
+<button class="accordion"><strong>6.  The quality of instruction was good.</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_6}}</li><br>
+  {%endfor%}
+</ol>
+</div>
+
+<button class="accordion"><strong>7.  Class participation and interaction were encouraged.</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_7}}</li><br>
+  {%endfor%}
+</ol>
+</div>
+
+<button class="accordion"><strong>8.  How can you describe the class?</strong></button>
+<div class="panel">
+  <ol>
+  {% for response in response.all %}
+     <li>{{response.question_8}}</li><br>
+  {%endfor%}
+  </ol>
+</div>
+
+
+<button class="accordion"><strong>9.  In your own word how can you describe the facilitator delivery and facilitation?</strong></button>
+<div class="panel">
+<ol>
+  {% for response in response.all %}
+     <li>{{response.question_9}}</li><br>
+  {%endfor%}
+</ol>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</div>
+
+{% endblock %}

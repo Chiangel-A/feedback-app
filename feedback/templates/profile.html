@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+<title>Profile</title>
+
+{% endblock %}
+
+
+{% block body %}
+<div style="text-align: center;">
+<div class="profile_card">
+<h2 style="text-align: center;">PROFILE</h2>
+{% if request.user.is_authenticated %}
+<p><b class="legend">Name: </b> <span style="font-size: 20px;">{{ request.user.first_name}} {{ request.user.last_name }}</span><hr style="border-width: 4px;" /></p>
+<p><b class="legend">Email Address: </b> <span style="font-size: 20px;">{{ request.user.email }}</span><hr style="border-width: 4px;" ></p>
+<p><b class="legend">Phone Number: </b><span style="font-size: 20px;">{{user.profile.phone_number}}</span><hr style="border-width: 4px;" ></p>
+<p><b class="legend">Gender: </b> <span style="font-size: 20px;">{{user.profile.gender}}</span><hr style="border-width: 4px;" ></p>
+<p><b class="legend">Address: </b> <span style="font-size: 20px;">{{user.profile.home_address}}</span></p>
+
+{% endif %}
+
+<p style="text-align: right;"><button> <a href="{% url 'edit_profile' %}" style="color: white;">Edit Profile</a> </button></p>
+</div>
+</div>
+
+
+
+	
+{% endblock %}

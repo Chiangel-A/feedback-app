@@ -1,0 +1,446 @@
+{% load static %}
+* {
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  background-color: #e6e6e6;
+}
+
+h2{color: green;}
+
+p{font-size: 20px;}
+
+.banner{
+		background: linear-gradient(rgba(38, 38, 38, 0.9), rgba(153, 153, 153, 0.2)), url("/static/images/banner.png") ;
+		width: 100%;
+		height: 400px;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+    background-size: 100% 400px;
+		position: relative;
+    text-align: center;
+    color: white;
+	}
+
+
+.banner_text{
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    font-size: 30px;
+    transform: translate(-20%, -20%);
+   	margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .banner {
+    width: 100%;
+    height: 400px;
+  }
+
+}
+
+.footer{
+		background: linear-gradient(rgba(38, 38, 38, 0.9), rgba(26, 26, 26, 0.6));
+		width: 100%;
+		font-size: 20px;
+		font-family: sans-serif;
+		text-align: center;
+		color: white;
+	}
+
+form p{ 
+    font-size: 20px;
+     
+}
+
+.content{ 
+    text-align: left;
+    font-size: 18PX;
+    margin: auto;
+    width: 70%;
+    padding: 20px 20px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+
+.content a{
+    font-size: 20px;
+    text-decoration: none;
+    }
+
+ul{list-style-type: none;}
+
+.form_content{
+    padding: 20px 20px; 
+
+}
+
+textarea{ 
+    width: 80%;
+    height: 80PX;
+    border: 2px solid #ccc;
+    padding: 12px 20px;
+    font-size: 18px;
+}
+
+form{
+     display: inline-block;
+     width: 100%;
+   
+}
+
+input[type=text],input[type=password], input[type=email]  {
+  width: 100%;
+  padding:9.2px;
+  margin: 5.6px;
+  font-size: 18px;
+
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+
+}
+
+select {
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    width: auto;
+    text-overflow: clip;
+}
+
+@media screen and (max-width: 600px) {
+ 
+  select  {
+    width:100%;
+}
+
+  }
+
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-size: 24px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-size: 24px;
+}
+
+
+
+/*navigation style*/
+
+.topnav {
+ /* overflow: hidden;*/
+  background-color: #333333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0;  /*Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  left:0;
+  
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.feedback:link {
+    color: green;
+}
+
+/* visited link */
+.feedback:visited {
+    color: green;
+}
+
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 20px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+/*Accordion style*/
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.feedback_content{
+    background-color: #e6e6e6;
+
+}
+
+/* Create two equal columns that floats next to each other */
+.columnleft {
+    float: left;
+    width: 57%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.columnright {
+    float: right;
+    width: 41%;
+    padding: 5px;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 800px) {
+    .columnleft, .columnright {   
+        width: 100%;
+        padding: 0;
+        font-size: 18;
+    }
+  }
+  
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 70%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 30%;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+/* profile page*/
+.profile_card {
+  width: 60%; 
+  display: inline-block;
+   text-align: left;}
+
+.legend{
+  font-size: 22px;
+ margin-right: 10px;
+}
+
+
+
+/*Arrow bullet*/
+i {
+  border: solid green;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-right: 10px
+
+}
+
+.arrow_right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow_left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
